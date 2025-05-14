@@ -1,12 +1,31 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Book, FileText, User, Calendar, Shield, Search, Info } from "lucide-react";
+import { Menu, Book, FileText, User, Calendar, Shield, Search, Info } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { auth } from "../../firebase"; // adjust the path as needed
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      alert("Logged out successfully");
+    } catch (error) {
+      console.error("Logout error:", error);
+      alert("Logout failed: " + error.message);
+    }
+  };
 
   const navLinks = [
     { name: 'Templates', path: '/templates', icon: <FileText className="h-5 w-5" /> },
@@ -39,14 +58,25 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          
+
           <div className="flex space-x-3">
-            <Button variant="outline" asChild>
-              <Link to="/login">Login</Link>
-            </Button>
-            <Button className="bg-legal-primary hover:bg-legal-secondary" asChild>
-              <Link to="/register">Register</Link>
-            </Button>
+            {isLoggedIn ? (
+              <Button
+                className="bg-red-500 hover:bg-red-600"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
+            ) : (
+              <>
+                <Button variant="outline" asChild>
+                  <Link to="/login">Login</Link>
+                </Button>
+                <Button className="bg-legal-primary hover:bg-legal-secondary" asChild>
+                  <Link to="/register">Register</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
 
@@ -77,12 +107,23 @@ const Navbar = () => {
                   ))}
                 </div>
                 <div className="mt-auto p-4 space-y-2">
-                  <Button variant="outline" className="w-full justify-center" asChild>
-                    <Link to="/login">Login</Link>
-                  </Button>
-                  <Button className="w-full justify-center bg-legal-primary hover:bg-legal-secondary" asChild>
-                    <Link to="/register">Register</Link>
-                  </Button>
+                  {isLoggedIn ? (
+                    <Button
+                      className="w-full justify-center bg-red-500 hover:bg-red-600"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <>
+                      <Button variant="outline" className="w-full justify-center" asChild>
+                        <Link to="/login">Login</Link>
+                      </Button>
+                      <Button className="w-full justify-center bg-legal-primary hover:bg-legal-secondary" asChild>
+                        <Link to="/register">Register</Link>
+                      </Button>
+                    </>
+                  )}
                 </div>
               </nav>
             </SheetContent>

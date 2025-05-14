@@ -4,19 +4,19 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Sarika Hegde",
     role: "Business Owner",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
     quote: "The legal templates saved me thousands in legal fees when setting up my business. The process was incredibly straightforward and user-friendly."
   },
   {
-    name: "Michael Chen",
+    name: "Kavin Patel",
     role: "Real Estate Investor",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
     quote: "Finding a specialized real estate lawyer was so simple with LegalAssist. I was able to book an appointment within minutes and got the advice I needed."
   },
   {
-    name: "Priya Patel",
+    name: "Priya Priyadarshi",
     role: "Tenant",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&h=256&q=80",
     quote: "The 'Know Your Rights' section helped me understand my tenant rights when I was facing issues with my landlord. The information was clear and empowering."

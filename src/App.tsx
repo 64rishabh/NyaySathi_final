@@ -10,7 +10,7 @@ import Register from "./pages/auth/Register";
 import Templates from "./pages/Templates";
 import Lawyers from "./pages/Lawyers";
 import NotFound from "./pages/NotFound";
-
+import LawyerDashboard from "./pages/LawyerDashboard";
 // Adding console logs to help debug the Shield component issue
 console.log("App.tsx loaded");
 
@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/register" element={<Register />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/lawyers" element={<Lawyers />} />
+          <Route path="/lawyer-dashboard" element={<LawyerDashboard/>}/>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
