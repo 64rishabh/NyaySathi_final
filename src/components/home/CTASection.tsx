@@ -21,7 +21,7 @@ const CTASection = () => {
             <Button size="lg" className="bg-legal-accent hover:bg-legal-accent/90 text-legal-primary px-8 py-6 text-lg" asChild>
               <Link to="/register">Create Free Account</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg" asChild>
+            <Button size="lg" variant="outline" className="border-white text-red-700 hover:bg-white/10 px-8 py-6 text-lg" asChild>
               <Link to="/lawyers">Find a Lawyer</Link>
             </Button>
           </div>

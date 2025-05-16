@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <Shield className="h-6 w-6" />
-              <span className="text-xl font-bold">LegalAssist</span>
+              <span className="text-xl font-bold">NyaySathi</span>
             </Link>
             <p className="text-gray-300 mb-4">
               Making legal assistance accessible to everyone. Get informed about your rights and connect with qualified legal professionals.
@@ -28,8 +28,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/templates" className="text-gray-300 hover:text-white transition duration-300">Legal Templates</Link></li>
               <li><Link to="/lawyers" className="text-gray-300 hover:text-white transition duration-300">Find Lawyers</Link></li>
-              <li><Link to="/appointments" className="text-gray-300 hover:text-white transition duration-300">Book Appointments</Link></li>
-              <li><Link to="/rights" className="text-gray-300 hover:text-white transition duration-300">Know Your Rights</Link></li>
+              <li><Link to="/my-appointments" className="text-gray-300 hover:text-white transition duration-300">Book Appointments</Link></li>
+              <li><Link to="/know-your-rights" className="text-gray-300 hover:text-white transition duration-300">Know Your Rights</Link></li>
               <li><Link to="/legal-library" className="text-gray-300 hover:text-white transition duration-300">Legal Library</Link></li>
             </ul>
           </div>

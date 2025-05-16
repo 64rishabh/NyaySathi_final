@@ -30,8 +30,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Templates', path: '/templates', icon: <FileText className="h-5 w-5" /> },
     { name: 'Find Lawyers', path: '/lawyers', icon: <User className="h-5 w-5" /> },
-    { name: 'Book Appointments', path: '/appointments', icon: <Calendar className="h-5 w-5" /> },
-    { name: 'Know Your Rights', path: '/rights', icon: <Shield className="h-5 w-5" /> },
+    { name: 'My Appointments', path: '/booking', icon: <Calendar className="h-5 w-5" /> },
+    { name: 'Know Your Rights', path: '/know-your-rights', icon: <Shield className="h-5 w-5" /> },
     { name: 'Legal Library', path: '/legal-library', icon: <Book className="h-5 w-5" /> },
     { name: 'Legal Assistant', path: '/legal-assistant', icon: <Search className="h-5 w-5" /> },
     { name: 'About', path: '/about', icon: <Info className="h-5 w-5" /> },
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <Shield className="h-8 w-8 text-legal-primary" />
-          <span className="text-2xl font-bold text-legal-primary font-montserrat">LegalAssist</span>
+          <span className="text-2xl font-bold text-legal-primary font-montserrat">NyaySathi</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64">
+            <SheetContent side="left" className="w-64">
               <nav className="flex flex-col h-full">
                 <div className="py-4">
                   <h2 className="text-lg font-bold text-legal-primary px-4">LegalAssist</h2>
